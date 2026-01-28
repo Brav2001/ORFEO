@@ -1,0 +1,61 @@
+---
+import "../styles/global.css";
+const { title } = Astro.props;
+
+import { ViewTransitions } from "astro:transitions";
+
+import Navbar from "../components/SiteComponents/Navbar.jsx";
+import Banner from "../components/SiteComponents/Banner.astro";
+import Footer from "../components/SiteComponents/Footer.astro";
+---
+
+<!doctype html>
+<html lang="es" class="h-full w-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="canonical" href="https://funigualdadh.org" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Sitio web de la Fundación para la igualdad y el desarrollo humano Funigualdadh."
+    />
+    <title>{title}</title>
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://funigualdadh.org/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="Sitio web de la Fundación para la igualdad y el desarrollo humano Funigualdadh."
+    />
+    <meta property="og:image" content="/logo-vOG.png" />
+    <meta property="og:image:alt" content="logo Funigualdadh" />
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="funigualdadh.org" />
+    <meta property="twitter:url" content="https://funigualdadh.org/" />
+    <meta name="twitter:title" content="Funigualdadh.org" />
+    <meta
+      name="twitter:description"
+      content="Sitio web de la Fundación para la igualdad y el desarrollo humano Funigualdadh."
+    />
+    <meta name="twitter:image" content="/logo-vOG.png" />
+
+    <ViewTransitions />
+  </head>
+
+  <body>
+    <header>
+      <Navbar client:only transition:persist />
+      <Banner />
+    </header>
+    <div class="min-h-screen">
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>

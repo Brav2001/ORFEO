@@ -22,6 +22,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         custom:
           "bg-custom text-custom-foreground hover:bg-custom/90 bg-slate-500",
+        red: "bg-red-500 text-white hover:bg-red-600 focus-visible:ring-red-500/20 dark:focus-visible:ring-red-500/40 dark:bg-red-600",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
