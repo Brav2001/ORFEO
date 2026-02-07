@@ -1,9 +1,18 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { Button } from "@/components/ui/button";
+import Hero from "@/components/IndexComponents/Hero.astro";
+import News from "@/components/IndexComponents/News.jsx";
+import Services from "@/components/IndexComponents/Servicios.jsx";
+import Estudios from "@/components/IndexComponents/Estudios.astro";
+import AcercaDe from "@/components/IndexComponents/AcercaDe.astro";
+import Contacto from "@/components/IndexComponents/Contacto";
 ---
 
 <Layout>
-  <h1>Astro</h1>
-  <Button variant="custom">Get Started</Button>
+  <Hero />
+  <Services />
+  <Estudios />
+  <News />
+  <AcercaDe />
+  <Contacto />
 </Layout>

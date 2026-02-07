@@ -1,0 +1,92 @@
+<section
+  id="inicio"
+  class="blog-section"
+  style={{
+    backgroundColor: "var(--blog-bg-primary)",
+    paddingTop: "calc(var(--blog-section-padding-mobile) + 100px)",
+  }}
+>
+  <div class="blog-container">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      {/* Contenido de texto */}
+      <div class="space-y-8">
+        <h1
+          style={{
+            fontSize: "clamp(2.25rem, 5vw, 3rem)",
+            fontWeight: "700",
+            lineHeight: "1.15",
+            color: "var(--blog-text-primary)",
+            letterSpacing: "-0.01em",
+          }}
+        >
+          ANÁLISIS ESTRATÉGICO Y CONSULTORÍA ESPECIALIZADA
+        </h1>
+
+        <p
+          style={{
+            fontSize: "1.05rem",
+            lineHeight: "1.7",
+            color: "var(--blog-text-secondary)",
+          }}
+        >
+          Brindamos análisis serio, trazabilidad y pensamiento crítico al
+          servicio del sector solidario y empresarial.
+        </p>
+
+        {/* Botones */}
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#servicios">
+            <button
+              style={{
+                backgroundColor: "var(--blog-secondary)",
+                color: "var(--blog-text-white)",
+                padding: "1rem 2rem",
+                border: "none",
+                cursor: "pointer",
+                transition: "var(--blog-transition)",
+                fontSize: "0.9rem",
+                fontWeight: "500",
+                letterSpacing: "0.02em",
+              }}
+              class="hover:opacity-90"
+            >
+              Explora nuestras áreas de trabajo
+            </button>
+          </a>
+
+          <a href="#contacto">
+            <button
+              style={{
+                backgroundColor: "var(--blog-accent)",
+                color: "var(--blog-text-primary)",
+                padding: "1rem 2rem",
+                border: "2px solid var(--blog-text-primary)",
+                cursor: "pointer",
+                transition: "var(--blog-transition)",
+                fontSize: "0.9rem",
+                fontWeight: "500",
+                letterSpacing: "0.02em",
+              }}
+              class="hover:bg-gray-50"
+            >
+              Solicita una consultoría
+            </button>
+          </a>
+        </div>
+      </div>
+
+      {/* Imagen */}
+      <div class="relative">
+        <img
+          src="https://images.unsplash.com/photo-1762341117487-dbc411bcf574?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHdvcmtpbmclMjBsYXB0b3AlMjBvZmZpY2V8ZW58MXx8fHwxNzcwNDMzNTg2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+          alt="Profesional trabajando"
+          class="w-full h-auto object-cover"
+          style={{
+            filter: "grayscale(100%)",
+            aspectRatio: "4/5",
+          }}
+        />
+      </div>
+    </div>
+  </div>
+</section>

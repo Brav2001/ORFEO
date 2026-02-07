@@ -1,0 +1,74 @@
+/**
+ * TEMA DEL BLOG - CONFIGURACIÓN FÁCIL
+ * 
+ * Cambia estos valores para personalizar los colores de tu blog:
+ * - Colores principales (primary, secondary, accent)
+ * - Colores de texto
+ * - Colores de fondo
+ * 
+ * Simplemente modifica los valores hexadecimales y todo el sitio se actualizará automáticamente.
+ */
+
+:root {
+  /* === COLORES PRINCIPALES === */
+  --blog-primary: #1a1a2e; /* Color principal - azul oscuro navy */
+  --blog-primary-light: #2d2d44; /* Variante clara del color principal */
+
+  --blog-secondary: #3d5a80; /* Color secundario - azul grisáceo */
+  --blog-secondary-hover: #2d4a70; /* Color secundario al pasar el mouse */
+
+  --blog-accent: #ffffff; /* Color de acento (botones outline, bordes) */
+  --blog-accent-hover: #f5f5f5; /* Color de acento al pasar el mouse */
+
+  /* === COLORES DE TEXTO === */
+  --blog-text-primary: #000000; /* Texto principal */
+  --blog-text-secondary: #4a4a4a; /* Texto secundario (descripciones) */
+  --blog-text-muted: #6b6b6b; /* Texto atenuado */
+  --blog-text-white: #ffffff; /* Texto blanco */
+
+  /* === COLORES DE FONDO === */
+  --blog-bg-primary: #ffffff; /* Fondo principal */
+  --blog-bg-secondary: #fafafa; /* Fondo secundario (secciones alternas) */
+  --blog-bg-gray: #e8e8e8; /* Fondo gris (tarjetas, áreas destacadas) */
+  --blog-bg-testimonial: #cecece; /* Fondo de testimonios */
+  --blog-bg-dark: #1a1a2e; /* Fondo oscuro */
+
+  /* === COLORES DE BORDES === */
+  --blog-border-light: #e0e0e0; /* Bordes claros */
+  --blog-border-dark: #000000; /* Bordes oscuros */
+
+  /* === ESPACIADO Y TAMAÑOS === */
+  --blog-section-padding: 6rem; /* Espaciado entre secciones (desktop) */
+  --blog-section-padding-mobile: 3rem; /* Espaciado entre secciones (móvil) */
+  --blog-container-max-width: 1200px; /* Ancho máximo del contenedor */
+
+  /* === TRANSICIONES === */
+  --blog-transition: all 0.3s ease; /* Transición estándar */
+}
+
+/* === UTILIDADES === */
+.blog-container {
+  max-width: var(--blog-container-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.blog-section {
+  padding: var(--blog-section-padding-mobile) 0;
+}
+
+@media (min-width: 768px) {
+  .blog-section {
+    padding: var(--blog-section-padding) 0;
+  }
+}
+
+/* === SCROLL SUAVE === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset para compensar la navegación fija */
+section[id] {
+  scroll-margin-top: 100px;
+}

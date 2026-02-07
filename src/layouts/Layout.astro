@@ -1,11 +1,10 @@
 ---
-import "../styles/global.css";
+import "../styles/index.css";
 const { title } = Astro.props;
 
 import { ViewTransitions } from "astro:transitions";
 
 import Navbar from "../components/SiteComponents/Navbar.jsx";
-import Banner from "../components/SiteComponents/Banner.astro";
 import Footer from "../components/SiteComponents/Footer.astro";
 ---
 
@@ -31,7 +30,7 @@ import Footer from "../components/SiteComponents/Footer.astro";
       property="og:description"
       content="Sitio web de la Fundación para la igualdad y el desarrollo humano Funigualdadh."
     />
-    <meta property="og:image" content="/logo-vOG.png" />
+    <meta property="og:image" content="/jb_logo.svg" />
     <meta property="og:image:alt" content="logo Funigualdadh" />
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -42,7 +41,10 @@ import Footer from "../components/SiteComponents/Footer.astro";
       name="twitter:description"
       content="Sitio web de la Fundación para la igualdad y el desarrollo humano Funigualdadh."
     />
-    <meta name="twitter:image" content="/logo-vOG.png" />
+    <meta name="twitter:image" content="/jb_logo.svg" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/jb_logo.svg" />
+    <link rel="icon" type="image/x-icon" href="/jb_logo.svg" />
 
     <ViewTransitions />
   </head>
@@ -50,13 +52,12 @@ import Footer from "../components/SiteComponents/Footer.astro";
   <body>
     <header>
       <Navbar client:only transition:persist />
-      <Banner />
     </header>
     <div class="min-h-screen">
       <slot />
     </div>
     <div>
-      <Footer/>
+      <Footer />
     </div>
   </body>
 </html>
