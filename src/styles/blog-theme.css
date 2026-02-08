@@ -54,13 +54,7 @@
 }
 
 .blog-section {
-  padding: var(--blog-section-padding-mobile) 0;
-}
-
-@media (min-width: 768px) {
-  .blog-section {
-    padding: var(--blog-section-padding) 0;
-  }
+  padding: 0;
 }
 
 /* === SCROLL SUAVE === */

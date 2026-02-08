@@ -28,14 +28,17 @@ const Contacto = () => {
       className="blog-section"
       style={{
         backgroundColor: "var(--blog-bg-secondary)",
+        minHeight: "100vh",
+        paddingTop: "3rem",
+        paddingBottom: "2rem",
       }}
     >
-      <div className="blog-container">
+      <div className="blog-container" style={{ width: "100%" }}>
         <h2
           style={{
             fontSize: "clamp(2rem, 4vw, 2.5rem)",
             fontWeight: "700",
-            marginBottom: "4rem",
+            marginBottom: "2rem",
             color: "var(--blog-text-primary)",
             letterSpacing: "-0.01em",
           }}
@@ -43,13 +46,13 @@ const Contacto = () => {
           CONTACTO
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10">
           {/* Información de contacto */}
-          <div className="space-y-8">
+          <div className="space-y-5">
             <p
               style={{
-                fontSize: "1.05rem",
-                lineHeight: "1.8",
+                fontSize: "1rem",
+                lineHeight: "1.7",
                 color: "var(--blog-text-secondary)",
               }}
             >
@@ -57,17 +60,19 @@ const Contacto = () => {
               ponerte en contacto con nosotros.
             </p>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
                 <div
                   style={{
-                    padding: "0.75rem",
+                    padding: "0.65rem",
                     backgroundColor: "var(--blog-bg-primary)",
                   }}
                 >
                   <Mail
-                    size={24}
-                    style={{ color: "var(--blog-text-primary)" }}
+                    size={22}
+                    style={{
+                      color: "var(--blog-text-primary)",
+                    }}
                   />
                 </div>
                 <div>
@@ -95,16 +100,18 @@ const Contacto = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-3">
                 <div
                   style={{
-                    padding: "0.75rem",
+                    padding: "0.65rem",
                     backgroundColor: "var(--blog-bg-primary)",
                   }}
                 >
                   <Phone
-                    size={24}
-                    style={{ color: "var(--blog-text-primary)" }}
+                    size={22}
+                    style={{
+                      color: "var(--blog-text-primary)",
+                    }}
                   />
                 </div>
                 <div>
@@ -132,16 +139,18 @@ const Contacto = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-3">
                 <div
                   style={{
-                    padding: "0.75rem",
+                    padding: "0.65rem",
                     backgroundColor: "var(--blog-bg-primary)",
                   }}
                 >
                   <MapPin
-                    size={24}
-                    style={{ color: "var(--blog-text-primary)" }}
+                    size={22}
+                    style={{
+                      color: "var(--blog-text-primary)",
+                    }}
                   />
                 </div>
                 <div>
@@ -169,13 +178,13 @@ const Contacto = () => {
           </div>
 
           {/* Formulario de contacto */}
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-3">
             <div>
               <label
                 htmlFor="nombre"
                 style={{
                   display: "block",
-                  marginBottom: "0.5rem",
+                  marginBottom: "0.4rem",
                   fontSize: "0.875rem",
                   color: "var(--blog-text-primary)",
                   fontWeight: "500",
@@ -192,7 +201,7 @@ const Contacto = () => {
                 required
                 style={{
                   width: "100%",
-                  padding: "0.875rem 1rem",
+                  padding: "0.7rem 1rem",
                   border: "1px solid var(--blog-border-light)",
                   backgroundColor: "var(--blog-bg-primary)",
                   color: "var(--blog-text-primary)",
@@ -209,7 +218,7 @@ const Contacto = () => {
                 htmlFor="email"
                 style={{
                   display: "block",
-                  marginBottom: "0.5rem",
+                  marginBottom: "0.4rem",
                   fontSize: "0.875rem",
                   color: "var(--blog-text-primary)",
                   fontWeight: "500",
@@ -226,7 +235,7 @@ const Contacto = () => {
                 required
                 style={{
                   width: "100%",
-                  padding: "0.875rem 1rem",
+                  padding: "0.7rem 1rem",
                   border: "1px solid var(--blog-border-light)",
                   backgroundColor: "var(--blog-bg-primary)",
                   color: "var(--blog-text-primary)",
@@ -243,7 +252,7 @@ const Contacto = () => {
                 htmlFor="mensaje"
                 style={{
                   display: "block",
-                  marginBottom: "0.5rem",
+                  marginBottom: "0.4rem",
                   fontSize: "0.875rem",
                   color: "var(--blog-text-primary)",
                   fontWeight: "500",
@@ -257,10 +266,10 @@ const Contacto = () => {
                 value={formData.mensaje}
                 onChange={handleChange}
                 required
-                rows={6}
+                rows={3}
                 style={{
                   width: "100%",
-                  padding: "0.875rem 1rem",
+                  padding: "0.7rem 1rem",
                   border: "1px solid var(--blog-border-light)",
                   backgroundColor: "var(--blog-bg-primary)",
                   color: "var(--blog-text-primary)",
@@ -278,13 +287,13 @@ const Contacto = () => {
               style={{
                 backgroundColor: "var(--blog-secondary)",
                 color: "var(--blog-text-white)",
-                padding: "1rem 2.5rem",
+                padding: "0.8rem 2.5rem",
                 border: "none",
                 cursor: "pointer",
                 transition: "var(--blog-transition)",
                 fontSize: "0.9rem",
                 fontWeight: "500",
-                marginTop: "1rem",
+                marginTop: "0.5rem",
               }}
               className="hover:opacity-90"
             >

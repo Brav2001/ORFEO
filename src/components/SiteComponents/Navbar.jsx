@@ -25,43 +25,24 @@ const Navbar = () => {
   return (
     <nav
       style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
         backgroundColor: "var(--blog-bg-primary)",
-        borderBottom: `1px solid ${isScrolled ? "var(--blog-border-light)" : "transparent"}`,
         transition: "var(--blog-transition)",
         boxShadow: isScrolled ? "0 2px 8px rgba(0,0,0,0.05)" : "none",
       }}
-      className="fixed top-0 left-0 right-0 z-50"
     >
       <div className="blog-container">
         <div className="flex items-center justify-between py-5">
           {/* Logo */}
-          <a href="#inicio" className="flex flex-col items-start">
-            <span
-              style={{
-                fontSize: "2rem",
-                fontWeight: "300",
-                color: "var(--blog-text-primary)",
-                lineHeight: "0.9",
-                fontFamily: "serif",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              JB
-            </span>
-            <span
-              style={{
-                fontSize: "0.65rem",
-                letterSpacing: "0.15em",
-                color: "var(--blog-text-primary)",
-                marginTop: "0.1rem",
-                fontWeight: "400",
-              }}
-            >
-              JOSEBAYONA
-            </span>
+          <a href="#inicio" className="flex items-center">
+            <img src="jb_logo.svg" alt="Logo" className="h-12 md:h-14" />
           </a>
 
-          {/* Desktop Navigation */}
+          {/* Botones del navbar */}
           <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <a
@@ -70,7 +51,7 @@ const Navbar = () => {
                 style={{
                   color: "var(--blog-text-primary)",
                   transition: "var(--blog-transition)",
-                  fontSize: "0.8rem",
+                  fontSize: "0.85rem",
                   fontWeight: "500",
                   letterSpacing: "0.05em",
                 }}
@@ -81,7 +62,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Botón móvil */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2"

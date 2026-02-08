@@ -28,9 +28,12 @@ const Services = () => {
       className="blog-section"
       style={{
         backgroundColor: "var(--blog-bg-primary)",
+        minHeight: "100vh",
+        paddingTop: "5rem",
+        paddingBottom: "3rem",
       }}
     >
-      <div className="blog-container">
+      <div className="blog-container" style={{ width: "100%" }}>
         <h2
           style={{
             fontSize: "clamp(2rem, 4vw, 2.5rem)",
