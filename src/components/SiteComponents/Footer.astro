@@ -1,3 +1,7 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
 <section class="footer-section">
 
   <div class="wave">
@@ -10,6 +14,20 @@
     “Recibimos servicios de alta calidad que mejoraron nuestro modelo
     financiero y nuestras prácticas organizativas.”
   </p>
+
+  <div class="social-icons">
+    <a href="https://instagram.com/tuusuario" target="_blank">
+      <Icon name="mdi:instagram" />
+    </a>
+
+    <a href="https://wa.me/3160435877" target="_blank">
+      <Icon name="mdi:whatsapp" />
+    </a>
+
+    <a href="https://linkedin.com/in/tuusuario" target="_blank">
+      <Icon name="mdi:linkedin" />
+    </a>
+</div>
 
 </section>
 <style>
@@ -41,6 +59,24 @@
     font-size: 18px;
     line-height: 1.6;
     color: #000;
+  }
+
+  .social-icons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .social-icons a {
+    font-size: 28px;
+    color: black;
+    transition: 0.3s;
+  }
+
+  .social-icons a:hover {
+    transform: translateY(-4px);
+    opacity: 0.7;
   }
 
 </style>
