@@ -14,12 +14,13 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "INICIO", href: "#inicio" },
-    { name: "SERVICIOS", href: "#servicios" },
-    { name: "ESTUDIOS", href: "#estudios" },
-    { name: "BLOG", href: "#blog" },
-    { name: "ACERCA DE", href: "#acerca-de" },
-    { name: "CONTACTO", href: "#contacto" },
+    { name: "INICIO", href: "/#inicio" },
+    { name: "SERVICIOS", href: "/#servicios" },
+    { name: "ESTUDIOS", href: "/#estudios" },
+    { name: "BLOG", href: "/#blog" },
+    { name: "ACERCA DE", href: "/#acerca-de" },
+    { name: "INFORMES", href: "/informes" },
+    { name: "CONTACTO", href: "/#contacto" },
   ];
 
   return (
@@ -38,7 +39,7 @@ const Navbar = () => {
       <div className="blog-container">
         <div className="flex items-center justify-between py-5">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center">
+          <a href="/#inicio" className="flex items-center">
             <img src="jb_logo.svg" alt="Logo" className="h-12 md:h-14" />
           </a>
 
