@@ -55,6 +55,7 @@ const Services = () => {
                 padding: "2.5rem 2rem",
                 backgroundColor: "var(--blog-bg-primary)",
                 transition: "var(--blog-transition)",
+                borderRadius: "var(--blog-radius-lg)",
               }}
               className="hover:shadow-lg"
             >
