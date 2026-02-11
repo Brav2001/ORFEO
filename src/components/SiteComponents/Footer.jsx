@@ -6,6 +6,8 @@ const Footer = () => {
         color: "var(--blog-text-white)",
         paddingTop: "140px",
         paddingBottom: "3rem",
+        borderTopLeftRadius: "var(--blog-radius-xl)",
+        borderTopRightRadius: "var(--blog-radius-xl)",
       }}
     >
       {/* Onda SVG en la parte superior */}

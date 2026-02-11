@@ -66,6 +66,7 @@ const Contacto = () => {
                   style={{
                     padding: "0.65rem",
                     backgroundColor: "var(--blog-bg-primary)",
+                    borderRadius: "var(--blog-radius-sm)",
                   }}
                 >
                   <Mail
@@ -105,6 +106,7 @@ const Contacto = () => {
                   style={{
                     padding: "0.65rem",
                     backgroundColor: "var(--blog-bg-primary)",
+                    borderRadius: "var(--blog-radius-sm)",
                   }}
                 >
                   <Phone
@@ -144,6 +146,7 @@ const Contacto = () => {
                   style={{
                     padding: "0.65rem",
                     backgroundColor: "var(--blog-bg-primary)",
+                    borderRadius: "var(--blog-radius-sm)",
                   }}
                 >
                   <MapPin
@@ -294,6 +297,7 @@ const Contacto = () => {
                 fontSize: "0.9rem",
                 fontWeight: "500",
                 marginTop: "0.5rem",
+                borderRadius: "var(--blog-radius-sm)",
               }}
               className="hover:opacity-90"
             >

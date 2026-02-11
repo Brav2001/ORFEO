@@ -59,37 +59,59 @@ const News = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Carrusel de noticias (lado izquierdo) */}
-          <div className="relative">
-            <div className="space-y-6">
-              <h3
-                style={{
-                  fontSize: "clamp(1.5rem, 3vw, 1.875rem)",
-                  fontWeight: "600",
-                  color: "var(--blog-text-primary)",
-                  lineHeight: "1.3",
-                }}
-              >
-                {news[currentSlide].title}
-              </h3>
+          <div className="relative overflow-hidden w-full">
+            {/* Pista de slides con transición suave */}
+            <div
+              className="flex"
+              style={{
+                width: `${news.length * 100}%`,
+                transform: `translateX(-${(currentSlide / news.length) * 100}%)`,
+                transition: "transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)",
+                willChange: "transform",
+              }}
+            >
+              {news.map((item, index) => (
+                <div
+                  key={index}
+                  style={{
+                    width: `${100 / news.length}%`,
+                    flexShrink: 0,
+                    paddingRight: "0.5rem",
+                  }}
+                >
+                  <div className="space-y-6">
+                    <h3
+                      style={{
+                        fontSize: "clamp(1.5rem, 3vw, 1.875rem)",
+                        fontWeight: "600",
+                        color: "var(--blog-text-primary)",
+                        lineHeight: "1.3",
+                      }}
+                    >
+                      {item.title}
+                    </h3>
 
-              <p
-                style={{
-                  fontSize: "1rem",
-                  color: "var(--blog-text-secondary)",
-                  lineHeight: "1.7",
-                }}
-              >
-                {news[currentSlide].excerpt}
-              </p>
+                    <p
+                      style={{
+                        fontSize: "1rem",
+                        color: "var(--blog-text-secondary)",
+                        lineHeight: "1.7",
+                      }}
+                    >
+                      {item.excerpt}
+                    </p>
 
-              <p
-                style={{
-                  fontSize: "0.875rem",
-                  color: "var(--blog-text-muted)",
-                }}
-              >
-                {news[currentSlide].subtitle}
-              </p>
+                    <p
+                      style={{
+                        fontSize: "0.875rem",
+                        color: "var(--blog-text-muted)",
+                      }}
+                    >
+                      {item.subtitle}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Controles de navegación */}
@@ -98,6 +120,7 @@ const News = () => {
               <div className="flex gap-2">
                 {news.map((_, index) => (
                   <button
+                    type="button"
                     key={index}
                     onClick={() => setCurrentSlide(index)}
                     style={{
@@ -120,6 +143,7 @@ const News = () => {
               {/* Botones de navegación */}
               <div className="flex gap-2">
                 <button
+                  type="button"
                   onClick={prevSlide}
                   style={{
                     width: "40px",
@@ -131,6 +155,7 @@ const News = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     transition: "var(--blog-transition)",
+                    borderRadius: "var(--blog-radius-sm)",
                   }}
                   className="hover:bg-gray-50"
                   aria-label="Anterior"
@@ -138,6 +163,7 @@ const News = () => {
                   <ChevronLeft size={20} />
                 </button>
                 <button
+                  type="button"
                   onClick={nextSlide}
                   style={{
                     width: "40px",
@@ -149,6 +175,7 @@ const News = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     transition: "var(--blog-transition)",
+                    borderRadius: "var(--blog-radius-sm)",
                   }}
                   className="hover:bg-gray-50"
                   aria-label="Siguiente"
@@ -168,6 +195,7 @@ const News = () => {
               flexDirection: "column",
               justifyContent: "space-between",
               minHeight: "350px",
+              borderRadius: "var(--blog-radius-lg)",
             }}
           >
             <div>
@@ -207,6 +235,7 @@ const News = () => {
                 fontWeight: "500",
                 alignSelf: "flex-start",
                 marginTop: "2rem",
+                borderRadius: "var(--blog-radius-sm)",
               }}
               className="hover:opacity-90"
             >

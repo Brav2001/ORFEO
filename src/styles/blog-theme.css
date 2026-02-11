@@ -40,21 +40,38 @@
   /* === ESPACIADO Y TAMAÑOS === */
   --blog-section-padding: 6rem; /* Espaciado entre secciones (desktop) */
   --blog-section-padding-mobile: 3rem; /* Espaciado entre secciones (móvil) */
-  --blog-container-max-width: 1200px; /* Ancho máximo del contenedor */
+  --blog-container-max-width: 1440px; /* Ancho máximo del contenedor (más amplio) */
 
   /* === TRANSICIONES === */
   --blog-transition: all 0.3s ease; /* Transición estándar */
+
+  /* === BORDES REDONDOS (estilo moderno minimalista) === */
+  --blog-radius-sm: 8px;
+  --blog-radius-md: 12px;
+  --blog-radius-lg: 20px;
+  --blog-radius-xl: 24px;
 }
 
 /* === UTILIDADES === */
 .blog-container {
   max-width: var(--blog-container-max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
 }
 
 .blog-section {
   padding: 0;
+}
+
+/* Bordes redondos minimalistas en elementos de formulario y botones */
+input[type="text"],
+input[type="email"],
+textarea {
+  border-radius: var(--blog-radius-sm) !important;
+}
+
+button {
+  border-radius: var(--blog-radius-sm);
 }
 
 /* === SCROLL SUAVE === */

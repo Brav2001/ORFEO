@@ -33,6 +33,8 @@ const Navbar = () => {
         backgroundColor: "var(--blog-bg-primary)",
         transition: "var(--blog-transition)",
         boxShadow: isScrolled ? "0 2px 8px rgba(0,0,0,0.05)" : "none",
+        borderBottomLeftRadius: isScrolled ? "var(--blog-radius-lg)" : 0,
+        borderBottomRightRadius: isScrolled ? "var(--blog-radius-lg)" : 0,
       }}
     >
       <div className="blog-container">

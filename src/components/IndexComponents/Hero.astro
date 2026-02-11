@@ -11,9 +11,10 @@
   }}
 >
   <div class="blog-container" style={{ width: "100%" }}>
-    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start min-h-[calc(100vh-80px-2rem)]">
       {/* Contenido de texto */}
-      <div class="space-y-8">
+      <div class="flex flex-col gap-6 min-h-dvh">
+        
         <h1
           style={{
             fontSize: "clamp(2.5rem, 5.5vw, 3.5rem)",
@@ -25,7 +26,7 @@
         >
           ANÁLISIS ESTRATÉGICO Y CONSULTORÍA ESPECIALIZADA
         </h1>
-
+       
         <p
           style={{
             fontSize: "1.15rem",
@@ -36,9 +37,9 @@
           Brindamos análisis serio, trazabilidad y pensamiento crítico al
           servicio del sector solidario y empresarial.
         </p>
-
+        
         {/* Botones */}
-        <div class="flex flex-wrap gap-4 pt-4">
+        <div class="flex flex-wrap gap-6 pt-4 px-2.5 justify-end">
           <a href="#servicios">
             <button
               style={{
@@ -51,6 +52,7 @@
                 fontSize: "0.95rem",
                 fontWeight: "500",
                 letterSpacing: "0.02em",
+                borderRadius: "var(--blog-radius-sm)",
               }}
               class="hover:opacity-90"
             >
@@ -70,6 +72,7 @@
                 fontSize: "0.95rem",
                 fontWeight: "500",
                 letterSpacing: "0.02em",
+                borderRadius: "var(--blog-radius-sm)",
               }}
               class="hover:bg-gray-50"
             >
@@ -80,7 +83,7 @@
       </div>
 
       {/* Imagen */}
-      <div class="relative h-full flex items-center">
+      <div class="relative h-full flex items-center overflow-hidden" style={{ borderRadius: "var(--blog-radius-xl)" }}>
         <img
           src="https://images.unsplash.com/photo-1762341117487-dbc411bcf574?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHdvcmtpbmclMjBsYXB0b3AlMjBvZmZpY2V8ZW58MXx8fHwxNzcwNDMzNTg2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
           alt="Profesional trabajando"
@@ -89,6 +92,7 @@
             filter: "grayscale(100%)",
             aspectRatio: "4/5",
             maxHeight: "calc(100vh - 180px)",
+            borderRadius: "var(--blog-radius-xl)",
           }}
         />
       </div>
