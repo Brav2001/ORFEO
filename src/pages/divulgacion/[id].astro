@@ -1,0 +1,10 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import DivulgacionDetail from "@/components/DivulgacionComponents/DivulgacionDetail";
+export const prerender = false;
+const { id } = Astro.params;
+---
+
+<Layout>
+  <DivulgacionDetail id={id} client:load />
+</Layout>
