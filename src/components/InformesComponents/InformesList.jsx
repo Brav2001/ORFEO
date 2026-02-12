@@ -37,14 +37,16 @@ const InformesList = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <div
-        style={{
-          paddingTop: "120px",
-          paddingBottom: "4rem",
-        }}
-      >
-        <div className="blog-container">
+    <section
+      className="blog-section"
+      style={{
+        backgroundColor: "var(--blog-bg-primary)",
+        minHeight: "100vh",
+        paddingTop: "5rem",
+        paddingBottom: "3rem",
+      }}
+    >
+      <div className="blog-container" style={{ width: "100%" }}>
           {/* Header */}
           <div style={{ marginBottom: "3rem" }}>
             <h1
@@ -95,7 +97,6 @@ const InformesList = () => {
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
                   setCurrentPage(1);
-                  console.log(e.target.value);
                 }}
                 style={{
                   width: "100%",
@@ -104,6 +105,7 @@ const InformesList = () => {
                   fontSize: "1rem",
                   outline: "none",
                   transition: "var(--blog-transition)",
+                  borderRadius: "var(--blog-radius-sm)",
                 }}
                 className="focus:border-gray-400"
               />
@@ -132,6 +134,8 @@ const InformesList = () => {
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
+                    borderRadius: "var(--blog-radius-lg)",
+                    overflow: "hidden",
                   }}
                   className="hover:shadow-lg"
                 >
@@ -153,6 +157,7 @@ const InformesList = () => {
                         objectFit: "cover",
                         filter: "grayscale(100%)",
                         transition: "var(--blog-transition)",
+                        borderRadius: "var(--blog-radius-lg)",
                       }}
                       className="hover:scale-105"
                     />
@@ -186,6 +191,7 @@ const InformesList = () => {
                             color: "var(--blog-text-primary)",
                             fontWeight: "500",
                             letterSpacing: "0.02em",
+                            borderRadius: "var(--blog-radius-sm)",
                           }}
                         >
                           {categoria.toUpperCase()}
@@ -246,16 +252,18 @@ const InformesList = () => {
               }}
             >
               <button
+                type="button"
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
                 style={{
                   padding: "0.5rem 1rem",
                   border: "1px solid var(--blog-border-light)",
-                  backgroundColor: "white",
+                  backgroundColor: "var(--blog-bg-primary)",
                   color: "var(--blog-text-primary)",
                   cursor: currentPage === 1 ? "not-allowed" : "pointer",
                   opacity: currentPage === 1 ? 0.5 : 1,
                   transition: "var(--blog-transition)",
+                  borderRadius: "var(--blog-radius-sm)",
                 }}
                 className="hover:bg-gray-50"
               >
@@ -265,6 +273,7 @@ const InformesList = () => {
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(
                 (page) => (
                   <button
+                    type="button"
                     key={page}
                     onClick={() => setCurrentPage(page)}
                     style={{
@@ -273,14 +282,15 @@ const InformesList = () => {
                       backgroundColor:
                         currentPage === page
                           ? "var(--blog-secondary)"
-                          : "white",
+                          : "var(--blog-bg-primary)",
                       color:
                         currentPage === page
-                          ? "white"
+                          ? "var(--blog-text-white)"
                           : "var(--blog-text-primary)",
                       cursor: "pointer",
                       fontWeight: currentPage === page ? "600" : "400",
                       transition: "var(--blog-transition)",
+                      borderRadius: "var(--blog-radius-sm)",
                     }}
                     className="hover:bg-gray-50"
                   >
@@ -290,6 +300,7 @@ const InformesList = () => {
               )}
 
               <button
+                type="button"
                 onClick={() =>
                   setCurrentPage((p) => Math.min(totalPages, p + 1))
                 }
@@ -297,12 +308,13 @@ const InformesList = () => {
                 style={{
                   padding: "0.5rem 1rem",
                   border: "1px solid var(--blog-border-light)",
-                  backgroundColor: "white",
+                  backgroundColor: "var(--blog-bg-primary)",
                   color: "var(--blog-text-primary)",
                   cursor:
                     currentPage === totalPages ? "not-allowed" : "pointer",
                   opacity: currentPage === totalPages ? 0.5 : 1,
                   transition: "var(--blog-transition)",
+                  borderRadius: "var(--blog-radius-sm)",
                 }}
                 className="hover:bg-gray-50"
               >
@@ -330,8 +342,7 @@ const InformesList = () => {
             </div>
           )}
         </div>
-      </div>
-    </div>
+    </section>
   );
 };
 

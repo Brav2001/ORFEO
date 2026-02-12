@@ -6,39 +6,40 @@ const InformeDetail = ({ id }) => {
 
   if (!informe) {
     return (
-      <div className="min-h-screen bg-white">
-        <div
-          style={{
-            paddingTop: "120px",
-            paddingBottom: "4rem",
-            textAlign: "center",
-          }}
-        >
-          <div className="blog-container">
-            <h1
-              style={{
-                fontSize: "2rem",
-                fontWeight: "700",
-                marginBottom: "1rem",
-                color: "var(--blog-text-primary)",
-              }}
-            >
-              Informe no encontrado
-            </h1>
-            <a
-              to="/informes"
-              style={{
-                color: "var(--blog-secondary)",
-                textDecoration: "none",
-                fontSize: "1.1rem",
-              }}
-              className="hover:underline"
-            >
-              Volver al listado
-            </a>
-          </div>
+      <section
+        className="blog-section"
+        style={{
+          backgroundColor: "var(--blog-bg-primary)",
+          minHeight: "100vh",
+          paddingTop: "5rem",
+          paddingBottom: "3rem",
+          textAlign: "center",
+        }}
+      >
+        <div className="blog-container" style={{ width: "100%" }}>
+          <h1
+            style={{
+              fontSize: "2rem",
+              fontWeight: "700",
+              marginBottom: "1rem",
+              color: "var(--blog-text-primary)",
+            }}
+          >
+            Informe no encontrado
+          </h1>
+          <a
+            href="/informes"
+            style={{
+              color: "var(--blog-secondary)",
+              textDecoration: "none",
+              fontSize: "1.1rem",
+            }}
+            className="hover:underline"
+          >
+            Volver al listado
+          </a>
         </div>
-      </div>
+      </section>
     );
   }
 
@@ -57,14 +58,16 @@ const InformeDetail = ({ id }) => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <div
-        style={{
-          paddingTop: "120px",
-          paddingBottom: "4rem",
-        }}
-      >
-        <div className="blog-container">
+    <section
+      className="blog-section"
+      style={{
+        backgroundColor: "var(--blog-bg-primary)",
+        minHeight: "100vh",
+        paddingTop: "5rem",
+        paddingBottom: "3rem",
+      }}
+    >
+      <div className="blog-container" style={{ width: "100%" }}>
           {/* Breadcrumb / Volver*/}
           <a
             href="/informes"
@@ -94,6 +97,7 @@ const InformeDetail = ({ id }) => {
                   overflow: "hidden",
                   backgroundColor: "var(--blog-bg-gray)",
                   border: "1px solid var(--blog-border-light)",
+                  borderRadius: "var(--blog-radius-xl)",
                 }}
               >
                 <img
@@ -104,6 +108,7 @@ const InformeDetail = ({ id }) => {
                     height: "100%",
                     objectFit: "cover",
                     filter: "grayscale(100%)",
+                    borderRadius: "var(--blog-radius-xl)",
                   }}
                 />
               </div>
@@ -127,6 +132,7 @@ const InformeDetail = ({ id }) => {
                       color: "var(--blog-text-primary)",
                       fontWeight: "500",
                       letterSpacing: "0.02em",
+                      borderRadius: "var(--blog-radius-sm)",
                     }}
                   >
                     {categoria.toUpperCase()}
@@ -193,6 +199,7 @@ const InformeDetail = ({ id }) => {
                   padding: "1.5rem",
                   backgroundColor: "var(--blog-bg-secondary)",
                   border: "1px solid var(--blog-border-light)",
+                  borderRadius: "var(--blog-radius-lg)",
                 }}
               >
                 <h3
@@ -279,6 +286,7 @@ const InformeDetail = ({ id }) => {
 
               {/* Botón de comprar */}
               <button
+                type="button"
                 onClick={handleComprar}
                 style={{
                   width: "100%",
@@ -295,6 +303,7 @@ const InformeDetail = ({ id }) => {
                   justifyContent: "center",
                   gap: "0.75rem",
                   letterSpacing: "0.02em",
+                  borderRadius: "var(--blog-radius-sm)",
                 }}
                 className="hover:opacity-90"
               >
@@ -317,8 +326,7 @@ const InformeDetail = ({ id }) => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+    </section>
   );
 };
 

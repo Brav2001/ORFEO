@@ -35,7 +35,7 @@ const News = () => {
 
   return (
     <section
-      id="blog"
+      id="news"
       className="blog-section"
       style={{
         backgroundColor: "var(--blog-bg-primary)",
