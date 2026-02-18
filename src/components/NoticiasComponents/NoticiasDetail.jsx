@@ -1,8 +1,8 @@
 import { ArrowLeft} from "lucide-react";
-import { informesData } from "@/utils/data/informes-libres";
+import { noticiasData } from "@/utils/data/noticias-data"
 
-const DivulgacionDetail = ({ id }) => {
-  const informe = informesData.find((i) => i.id === id);
+const NoticiasDetail = ({ id }) => {
+  const informe = noticiasData.find((i) => i.id === id);
 
   if (!informe) {
     return (
@@ -62,7 +62,7 @@ const DivulgacionDetail = ({ id }) => {
       <div className="blog-container" style={{ width: "100%" }}>
         {/* Breadcrumb / Volver*/}
         <a
-          href="/divulgacion"
+          href="/noticias"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -70,13 +70,14 @@ const DivulgacionDetail = ({ id }) => {
             color: "var(--blog-text-secondary)",
             textDecoration: "none",
             marginBottom: "2rem",
+            marginTop: "5rem",
             fontSize: "0.95rem",
             transition: "var(--blog-transition)",
           }}
           className="hover:text-black"
         >
           <ArrowLeft size={18} />
-          Volver a divulgación
+          Volver a las noticias
         </a>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -265,31 +266,89 @@ const DivulgacionDetail = ({ id }) => {
                 </div>
               </div>
 
-              {/* Botón de descarga */}
-              <button
-                type="button"
-                onClick={handleComprar}
-                style={{
-                  width: "100%",
-                  padding: "1.25rem 2rem",
-                  backgroundColor: "var(--blog-secondary)",
-                  color: "var(--blog-text-white)",
-                  border: "none",
-                  fontSize: "1.05rem",
-                  fontWeight: "600",
-                  cursor: "pointer",
-                  transition: "var(--blog-transition)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "0.75rem",
-                  letterSpacing: "0.02em",
-                  borderRadius: "var(--blog-radius-sm)",
-                }}
-                className="hover:opacity-90"
-              >
-                DESCARGAR
-              </button>
+              {/* Botones redes sociales */}
+              <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
+                {informe.link_instagram && (
+                  <a
+                    href={informe.link_instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "2.5rem",
+                      height: "2.5rem",
+                      backgroundColor: "#E1306C",
+                      color: "white",
+                      borderRadius: "50%",
+                      fontSize: "1.25rem",
+                    }}
+                  >
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                )}
+                {informe.link_lindekin && (
+                  <a
+                    href={informe.link_lindekin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "2.5rem",
+                      height: "2.5rem",
+                      backgroundColor: "#0077B5",
+                      color: "white",
+                      borderRadius: "50%",
+                      fontSize: "1.25rem",
+                    }}
+                  >
+                    <i className="fab fa-linkedin-in"></i>
+                  </a>
+                )}
+                {informe.link_facebook && (
+                  <a
+                    href={informe.link_facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "2.5rem",
+                      height: "2.5rem",
+                      backgroundColor: "#1877F2",
+                      color: "white",
+                      borderRadius: "50%",
+                      fontSize: "1.25rem",
+                    }}
+                  >
+                    <i className="fab fa-facebook-f"></i>
+                  </a>
+                )}
+                {informe.link_x && (
+                  <a
+                    href={informe.link_x}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "2.5rem",
+                      height: "2.5rem",
+                      backgroundColor: "#000000", // Color negro para X (Twitter)
+                      color: "#FFFFFF", // Texto blanco para contraste
+                      borderRadius: "50%",
+                      fontSize: ".9rem", // Ajustar tamaño del ícono para X
+                    }}
+                  >
+                     <i className="fab fa-x-twitter"></i> {/* Ícono de X (Twitter) */}
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -297,4 +356,4 @@ const DivulgacionDetail = ({ id }) => {
   );
 };
 
-export default DivulgacionDetail;
+export default NoticiasDetail;

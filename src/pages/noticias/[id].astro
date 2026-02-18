@@ -1,0 +1,11 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import NoticiasDetail from "@/components/NoticiasComponents/NoticiasDetail";
+export const prerender = false;
+const { id } = Astro.params;
+---
+
+<Layout>
+  <NoticiasDetail id={id} client:load />
+</Layout>
+

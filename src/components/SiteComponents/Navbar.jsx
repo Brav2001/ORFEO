@@ -17,7 +17,7 @@ const Navbar = () => {
     { name: "INICIO", href: "/#inicio" },
     { name: "SERVICIOS", href: "/#servicios" },
     //{ name: "ESTUDIOS", href: "/#estudios" },
-    { name: "NEWS", href: "/#news" },
+    { name: "NOTICIAS", href: "/noticias" },
     { name: "ACERCA DE", href: "/#acerca-de" },
     { name: "INFORMES", href: "/informes" },
     { name: "DIVULGACIÓN", href: "/divulgacion" },
