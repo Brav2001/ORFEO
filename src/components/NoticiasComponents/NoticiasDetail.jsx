@@ -1,357 +1,165 @@
-import { ArrowLeft} from "lucide-react";
-import { noticiasData } from "@/utils/data/noticias-data"
+import { ArrowLeft } from "lucide-react";
+import {
+  FaInstagram,
+  FaLinkedinIn,
+  FaFacebookF,
+  FaXTwitter,
+} from "react-icons/fa6";
+import { noticiasData } from "@/utils/data/noticias-data";
 
 const NoticiasDetail = ({ id }) => {
-  const informe = noticiasData.find((i) => i.id === id);
+  const noticia = noticiasData.find((i) => i.id === id);
 
-  if (!informe) {
+  const handleBack = () => {
+    window.location.href = "/noticias";
+  };
+
+  const socialConfig = [
+    {
+      key: "link_instagram",
+      icon: FaInstagram,
+    },
+    {
+      key: "link_lindekin",
+      icon: FaLinkedinIn,
+    },
+    {
+      key: "link_facebook",
+      icon: FaFacebookF,
+    },
+    {
+      key: "link_x",
+      icon: FaXTwitter,
+    },
+  ];
+
+  if (!noticia) {
     return (
-      <section
-        className="blog-section"
-        style={{
-          backgroundColor: "var(--blog-bg-primary)",
-          minHeight: "100vh",
-          paddingTop: "5rem",
-          paddingBottom: "3rem",
-          textAlign: "center",
-        }}
-      >
-        <div className="blog-container" style={{ width: "100%" }}>
-          <h1
-            style={{
-              fontSize: "2rem",
-              fontWeight: "700",
-              marginBottom: "1rem",
-              color: "var(--blog-text-primary)",
-            }}
-          >
+      <section className="min-h-screen bg-[var(--blog-bg-primary)] pt-28 pb-16">
+        <div className="blog-container w-full text-center">
+          <h1 className="text-3xl font-bold text-[var(--blog-text-primary)] mb-6">
             Publicación no encontrada
           </h1>
-          <a
-            href="/divulgacion"
-            style={{
-              color: "var(--blog-secondary)",
-              textDecoration: "none",
-              fontSize: "1.1rem",
-            }}
-            className="hover:underline"
+
+          <button
+            onClick={handleBack}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                       border border-[var(--blog-border-light)]
+                       text-sm font-medium
+                       text-[var(--blog-text-secondary)]
+                       hover:text-[var(--blog-text-primary)]
+                       hover:border-[var(--blog-text-primary)]
+                       transition-all duration-300"
           >
-            Volver a divulgación
-          </a>
+            <ArrowLeft size={16} />
+            Volver a noticias
+          </button>
         </div>
       </section>
     );
   }
 
-  const handleComprar = () => {
-    alert(
-      `¡Gracias por tu interés en comprar el informe "${informe.titulo}"! Redirigiéndote al enlace de descarga.`,
-    );
-  };
-
   return (
-    <section
-      className="blog-section"
-      style={{
-        backgroundColor: "var(--blog-bg-primary)",
-        minHeight: "100vh",
-        paddingTop: "5rem",
-        paddingBottom: "3rem",
-      }}
-    >
-      <div className="blog-container" style={{ width: "100%" }}>
-        {/* Breadcrumb / Volver*/}
-        <a
-          href="/noticias"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            color: "var(--blog-text-secondary)",
-            textDecoration: "none",
-            marginBottom: "2rem",
-            marginTop: "5rem",
-            fontSize: "0.95rem",
-            transition: "var(--blog-transition)",
-          }}
-          className="hover:text-black"
+    <section className="min-h-screen bg-[var(--blog-bg-primary)] pt-28 pb-16">
+      <div className="blog-container w-full">
+        {/* Botón volver */}
+        <button
+          onClick={handleBack}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                     border border-[var(--blog-border-light)]
+                     text-sm font-medium
+                     text-[var(--blog-text-secondary)]
+                     hover:text-[var(--blog-text-primary)]
+                     hover:border-[var(--blog-text-primary)]
+                     transition-all duration-300
+                     cursor-pointer"
         >
-          <ArrowLeft size={18} />
-          Volver a las noticias
-        </a>
+          <ArrowLeft size={16} />
+          Volver a noticias
+        </button>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Columna izquierda - Imagen */}
-            <div>
-              <div
-                style={{
-                  width: "100%",
-                  height: "500px",
-                  overflow: "hidden",
-                  backgroundColor: "var(--blog-bg-gray)",
-                  border: "1px solid var(--blog-border-light)",
-                  borderRadius: "var(--blog-radius-xl)",
-                }}
-              >
-                <img
-                  src={informe.imagen}
-                  alt={informe.titulo}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    filter: "grayscale(100%)",
-                    borderRadius: "var(--blog-radius-xl)",
-                  }}
-                />
-              </div>
-
-              {/* Categorías debajo de la imagen */}
-              <div
-                style={{
-                  display: "flex",
-                  gap: "0.5rem",
-                  marginTop: "1.5rem",
-                  flexWrap: "wrap",
-                }}
-              >
-                {informe.categorias.map((categoria) => (
-                  <span
-                    key={categoria}
-                    style={{
-                      fontSize: "0.8rem",
-                      padding: "0.4rem 1rem",
-                      backgroundColor: "var(--blog-bg-gray)",
-                      color: "var(--blog-text-primary)",
-                      fontWeight: "500",
-                      letterSpacing: "0.02em",
-                      borderRadius: "var(--blog-radius-sm)",
-                    }}
-                  >
-                    {categoria.toUpperCase()}
-                  </span>
-                ))}
-              </div>
+        <div className="grid lg:grid-cols-2 gap-16 items-start mt-10">
+          {/* Imagen */}
+          <div>
+            <div className="w-full h-[480px] rounded-2xl overflow-hidden border border-[var(--blog-border-light)]">
+              <img
+                src={noticia.imagen}
+                alt={noticia.titulo}
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"
+              />
             </div>
 
-            {/* Columna derecha - Información */}
-            <div>
-              <h1
-                style={{
-                  fontSize: "clamp(2rem, 4vw, 2.75rem)",
-                  fontWeight: "700",
-                  marginBottom: "1.5rem",
-                  color: "var(--blog-text-primary)",
-                  lineHeight: "1.2",
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                {informe.titulo}
-              </h1>
-
-              <div
-                style={{
-                  marginBottom: "2.5rem",
-                }}
-              >
-                <h2
-                  style={{
-                    fontSize: "1.1rem",
-                    fontWeight: "600",
-                    marginBottom: "1rem",
-                    color: "var(--blog-text-primary)",
-                  }}
+            {/* Categorías */}
+            <div className="flex flex-wrap gap-2 mt-6">
+              {noticia.categorias.map((categoria) => (
+                <span
+                  key={categoria}
+                  className="text-xs px-3 py-1 rounded-full
+                             bg-[var(--blog-bg-gray)]
+                             text-[var(--blog-text-primary)]
+                             font-medium tracking-wide"
                 >
-                  Descripción
-                </h2>
-                <p
-                  style={{
-                    fontSize: "1.05rem",
-                    lineHeight: "1.8",
-                    color: "var(--blog-text-secondary)",
-                  }}
-                >
-                  {informe.descripcionLarga}
-                </p>
-              </div>
-
-              <div
-                style={{
-                  marginBottom: "2.5rem",
-                  padding: "1.5rem",
-                  backgroundColor: "var(--blog-bg-secondary)",
-                  border: "1px solid var(--blog-border-light)",
-                  borderRadius: "var(--blog-radius-lg)",
-                }}
-              >
+                  {categoria.toUpperCase()}
+                </span>
+              ))}
+            </div>
+            {/* Redes sociales */}
+            {socialConfig.some((social) => noticia[social.key]) && (
+              <div className="mt-12 border-t border-[var(--blog-border-light)] pt-8">
                 <h3
-                  style={{
-                    fontSize: "0.95rem",
-                    fontWeight: "600",
-                    marginBottom: "0.75rem",
-                    color: "var(--blog-text-primary)",
-                    letterSpacing: "0.02em",
-                  }}
+                  className="text-xs font-semibold uppercase tracking-widest 
+                   text-[var(--blog-text-secondary)] mb-6"
                 >
-                  DETALLES DE LA PUBLICACIÓN
+                  Ver en redes
                 </h3>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "0.5rem",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      fontSize: "0.9rem",
-                    }}
-                  >
-                    <span style={{ color: "var(--blog-text-muted)" }}>
-                      Fecha de publicación:
-                    </span>
-                    <span
-                      style={{
-                        color: "var(--blog-text-primary)",
-                        fontWeight: "500",
-                      }}
-                    >
-                      {new Date(informe.fecha).toLocaleDateString("es-CO", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      fontSize: "0.9rem",
-                    }}
-                  >
-                    <span style={{ color: "var(--blog-text-muted)" }}>
-                      Formato:
-                    </span>
-                    <span
-                      style={{
-                        color: "var(--blog-text-primary)",
-                        fontWeight: "500",
-                      }}
-                    >
-                      PDF Digital
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      fontSize: "0.9rem",
-                    }}
-                  >
-                    <span style={{ color: "var(--blog-text-muted)" }}>
-                      Acceso:
-                    </span>
-                    <span
-                      style={{
-                        color: "var(--blog-text-primary)",
-                        fontWeight: "500",
-                      }}
-                    >
-                      Descarga inmediata
-                    </span>
-                  </div>
+
+                <div className="flex gap-4">
+                  {socialConfig.map((social) => {
+                    const link = noticia[social.key];
+                    if (!link) return null;
+
+                    const Icon = social.icon;
+
+                    return (
+                      <a
+                        key={social.key}
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-11 h-11 flex items-center justify-center
+                       rounded-full
+                       border border-[var(--blog-border-light)]
+                       text-[var(--blog-text-secondary)]
+                       bg-transparent
+                       hover:bg-[var(--blog-bg-gray)]
+                       hover:text-[var(--blog-text-primary)]
+                       transition-all duration-300
+                       hover:scale-105
+                       cursor-pointer"
+                      >
+                        <Icon size={16} />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
+            )}
+          </div>
 
-              {/* Botones redes sociales */}
-              <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
-                {informe.link_instagram && (
-                  <a
-                    href={informe.link_instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      width: "2.5rem",
-                      height: "2.5rem",
-                      backgroundColor: "#E1306C",
-                      color: "white",
-                      borderRadius: "50%",
-                      fontSize: "1.25rem",
-                    }}
-                  >
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                )}
-                {informe.link_lindekin && (
-                  <a
-                    href={informe.link_lindekin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      width: "2.5rem",
-                      height: "2.5rem",
-                      backgroundColor: "#0077B5",
-                      color: "white",
-                      borderRadius: "50%",
-                      fontSize: "1.25rem",
-                    }}
-                  >
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                )}
-                {informe.link_facebook && (
-                  <a
-                    href={informe.link_facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      width: "2.5rem",
-                      height: "2.5rem",
-                      backgroundColor: "#1877F2",
-                      color: "white",
-                      borderRadius: "50%",
-                      fontSize: "1.25rem",
-                    }}
-                  >
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                )}
-                {informe.link_x && (
-                  <a
-                    href={informe.link_x}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      width: "2.5rem",
-                      height: "2.5rem",
-                      backgroundColor: "#000000", // Color negro para X (Twitter)
-                      color: "#FFFFFF", // Texto blanco para contraste
-                      borderRadius: "50%",
-                      fontSize: ".9rem", // Ajustar tamaño del ícono para X
-                    }}
-                  >
-                     <i className="fab fa-x-twitter"></i> {/* Ícono de X (Twitter) */}
-                  </a>
-                )}
-              </div>
+          {/* Información */}
+          <div>
+            <h1 className="text-4xl font-bold text-[var(--blog-text-primary)] leading-tight">
+              {noticia.titulo}
+            </h1>
+
+            <div className="mt-8">
+              <p className="text-base leading-relaxed text-[var(--blog-text-secondary)]">
+                {noticia.texto}
+              </p>
             </div>
           </div>
         </div>
+      </div>
     </section>
   );
 };
