@@ -37,7 +37,7 @@ const News = () => {
           className="text-3xl md:text-4xl font-bold mb-12"
           style={{ color: "var(--blog-text-primary)" }}
         >
-          NEWS
+          NOTICIAS RECIENTES
         </h2>
 
         {/* Layout de noticias */}
