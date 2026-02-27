@@ -39,8 +39,14 @@
         </p>
         
         {/* Botones */}
-        <div class="flex flex-wrap gap-6 pt-4 px-2.5 justify-end">
-          <a href="#servicios">
+        {/*
+          Botones alineados a la izquierda del bloque de texto (igual que el
+          título). Quitamos el padding horizontal y no centramos en móviles
+          para mantener esa alineación. El espacio entre botones se gestiona
+          con `gap-6` y `items-center` sigue garantizando la altura uniforme.
+        */}
+        <div class="flex flex-wrap gap-6 pt-4 items-center justify-start">
+          <a href="#servicios" class="flex-shrink-0">
             <button
               style={{
                 backgroundColor: "var(--blog-secondary)",
@@ -60,7 +66,7 @@
             </button>
           </a>
 
-          <a href="#contacto">
+          <a href="#contacto" class="flex-shrink-0">
             <button
               style={{
                 backgroundColor: "var(--blog-accent)",

@@ -5,7 +5,7 @@ import { useStore } from "../../utils/store";
 import { useEffect } from "react";
 
 const Admin = () => {
-  const [logged] = useStore((state) => [state.logged]);
+  const logged = useStore((state) => state.logged);
 
   useEffect(() => {
     validateSession();

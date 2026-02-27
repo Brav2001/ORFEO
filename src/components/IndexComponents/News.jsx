@@ -1,29 +1,12 @@
+import { noticiasData } from "@/utils/data/noticias-data";
+import { useEffect, useState } from "react";
+
 const News = () => {
-  const news = [
-    {
-      title: "Ejemplo de publicación reciente",
-      excerpt:
-        "Análisis profundo sobre las tendencias del mercado financiero y su impacto en el sector solidario.",
-      subtitle: "Finanzas · 5 min de lectura",
-      image:
-        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3",
-    },
-    {
-      title: "Estrategias de crecimiento organizacional",
-      subtitle: "Estrategia · 8 min de lectura",
-    },
-    {
-      title: "Innovación en consultoría empresarial",
-      subtitle: "Consultoría · 6 min de lectura",
-    },
-    {
-      title: "Panorama económico 2025",
-      subtitle: "Economía · 4 min de lectura",
-    },
-  ];
+  const [currentPath, setCurrentPath] = useState("");
+  const news = noticiasData;
 
   const featured = news[0];
-  const recent = news.slice(1);
+  const recent = news.slice(1, 4);
 
   return (
     <section
@@ -45,8 +28,8 @@ const News = () => {
           {/*  noticia destacada */}
           <article className="space-y-6">
             <img
-              src={featured.image}
-              alt={featured.title}
+              src={featured.imagen}
+              alt={featured.titulo}
               className="w-full h-[260px] md:h-[320px] object-cover rounded-xl"
             />
 
@@ -55,43 +38,43 @@ const News = () => {
                 className="text-sm"
                 style={{ color: "var(--blog-text-muted)" }}
               >
-                {featured.subtitle}
+                {featured.descripcion}
               </p>
 
               <h3
                 className="text-2xl md:text-3xl font-semibold leading-snug"
                 style={{ color: "var(--blog-text-primary)" }}
               >
-                {featured.title}
+                {featured.titulo}
               </h3>
 
               <p
                 className="text-base leading-relaxed"
                 style={{ color: "var(--blog-text-secondary)" }}
               >
-                {featured.excerpt}
+                {featured.texto}
               </p>
 
-              <button
-                className="mt-4 px-6 py-3 rounded-md text-sm font-medium hover:opacity-90 transition"
+              <a
+                href={`/noticias/${featured.id}`}
+                className="mt-4 inline-block px-6 py-3 rounded-md text-sm font-medium hover:opacity-90 transition"
                 style={{
                   backgroundColor: "var(--blog-secondary)",
                   color: "var(--blog-text-white)",
                 }}
               >
                 Leer artículo
-              </button>
+              </a>
             </div>
           </article>
 
           {/* Noticias recientes */}
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
-
-            {recent.map((item, i) => (
-              <article
-                key={i}
-                className="group cursor-pointer p-5 rounded-xl border transition hover:-translate-y-1 hover:shadow-md"
+            {recent.map((item) => (
+              <a
+                href={`/noticias/${item.id}`}
+                className="group p-5 rounded-xl border transition hover:-translate-y-1 hover:shadow-md block"
                 style={{
                   backgroundColor: "var(--blog-bg-gray)",
                   borderColor: "var(--blog-border-light)",
@@ -102,14 +85,14 @@ const News = () => {
                     className="text-xs"
                     style={{ color: "var(--blog-text-muted)" }}
                   >
-                    {item.subtitle}
+                    {item.descripcion}
                   </p>
 
                   <h4
                     className="text-base font-semibold leading-snug group-hover:opacity-80"
                     style={{ color: "var(--blog-text-primary)" }}
                   >
-                    {item.title}
+                    {item.titulo}
                   </h4>
 
                   <span
@@ -118,11 +101,9 @@ const News = () => {
                   >
                     Leer más →
                   </span>
-
                 </div>
-              </article>
+              </a>
             ))}
-
           </div>
         </div>
       </div>

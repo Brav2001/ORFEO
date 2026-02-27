@@ -1,20 +1,18 @@
 import AuthForm from "../Auth/AuthForm";
+import LoginImagePanel from "./LoginImagePanel";
 
 const Login = () => {
   return (
-    <main>
-      <div className="h-screen flex flex-wrap items-center justify-center">
-        <div className="flex items-center justify-center">
-          <div className="flex flex-col items-center bg-white border-2 border-primary rounded-lg  md:flex-row md:max-w-5xl max-w-xl m-8 ">
-            <img
-              className="object-cover w-full  md:w-2/4"
-              src="/jb_logo.svg"
-              alt="logo Jose Bayona"
-            />
-            <div className="flex flex-col w-full  md:w-2/4 leading-normal">
-              {/* <AuthForm /> */}
+    <main className="min-h-screen bg-slate-100 px-4 py-8">
+      <div className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-6xl items-center justify-center">
+        <div className="grid w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl md:min-h-[640px] md:grid-cols-2">
+          <LoginImagePanel />
+
+          <section className="flex h-full items-center justify-center p-4 sm:p-8">
+            <div className="w-full max-w-md">
+              <AuthForm />
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </main>

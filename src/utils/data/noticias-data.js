@@ -9,6 +9,7 @@ export const noticiasData = [
     imagen:
       "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBhbmFseXNpc3xlbnwxfHx8fDE3NzA0MzM1ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
     categorias: ["Financiero", "Cooperativas", "Trimestral"],
+    created_at: "2026-02-24T10:00:00Z",
     link_instagram: "https://www.instagram.com/p/XXXXXXXXX/",
     link_lindekin: "https://www.linkedin.com/feed/update/XXXXXXXXX/",
     link_facebook: "https://www.facebook.com/ORFEO/posts/XXXXXXXXX/",
@@ -24,7 +25,7 @@ export const noticiasData = [
     imagen:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyaXNrJTIwbWFuYWdlbWVudCUyMGJ1c2luZXNzfGVufDF8fHx8MTc3MDQzMzU4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
     categorias: ["Riesgos", "Estrategia", "Consultoría"],
-    fecha: "2025-01-20",
+    created_at: "2026-02-24T10:00:00Z"
     
   },
   {
@@ -37,7 +38,7 @@ export const noticiasData = [
     imagen:
       "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJpbGl0eSUyMGJ1c2luZXNzfGVufDF8fHx8MTc3MDQzMzU4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
     categorias: ["Sostenibilidad", "KPIs", "ESG"],
-    fecha: "2025-02-01",
+    created_at: "2026-02-24T10:00:00Z",
     link_instagram: "https://www.instagram.com/p/XXXXXXXXX/",
     link_lindekin: "https://www.linkedin.com/feed/update/XXXXXXXXX/",
     link_facebook: "https://www.facebook.com/ORFEO/posts/XXXXXXXXX/",
@@ -53,7 +54,7 @@ export const noticiasData = [
     imagen:
       "https://images.unsplash.com/photo-1551434678-e076c223a692?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwdHJhbnNmb3JtYXRpb24lMjBidXNpbmVzc3xlbnwxfHx8fDE3NzA0MzM1ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
     categorias: ["Tecnología", "Digital", "Innovación"],
-    fecha: "2025-02-05",
+    created_at: "2026-02-24T10:00:00Z",
     link_instagram: "https://www.instagram.com/p/XXXXXXXXX/",
     link_lindekin: "https://www.linkedin.com/feed/update/XXXXXXXXX/",
     
@@ -68,7 +69,7 @@ export const noticiasData = [
     imagen:
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBnb3Zlcm5hbmNlfGVufDF8fHx8MTc3MDQzMzU4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
     categorias: ["Gobernanza", "Transparencia", "Compliance"],
-    fecha: "2025-02-08",
+    created_at: "2026-02-24T10:00:00Z",
     link: "https://www.ejemplo.com/informe5",
   },
   {
@@ -81,8 +82,8 @@ export const noticiasData = [
     imagen:
       "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29ub215JTIwZ3Jvd3RofGVufDF8fHx8MTc3MDQzMzU4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
     categorias: ["Macroeconomía", "Proyecciones", "Colombia"],
+    created_at: "2026-02-24T10:00:00Z",
     link: "https://www.ejemplo.com/informe6",
-    fecha: "2025-02-10",
   },
   {
     id: "7",
@@ -94,8 +95,8 @@ export const noticiasData = [
     imagen:
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMGxveWFsdHl8ZW58MXx8fHwxNzcwNDMzNTg2fDA&ixlib=rb-4.1.0&q=80&w=1080",
     categorias: ["Marketing", "Retención", "Experiencia"],
+    created_at: "2026-02-24T10:00:00Z",
     link: "https://www.ejemplo.com/informe7",
-    fecha: "2025-01-25",
   },
   {
     id: "8",
@@ -107,8 +108,8 @@ export const noticiasData = [
     imagen:
       "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wbGlhbmNlJTIwbGF3fGVufDF8fHx8MTc3MDQzMzU4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
     categorias: ["Cumplimiento", "SARLAFT", "Regulatorio"],
+    created_at: "2026-02-24T10:00:00Z",
     link: "https://www.ejemplo.com/informe8",
-    fecha: "2025-01-30",
   },
   {
     id: "9",
@@ -121,7 +122,7 @@ export const noticiasData = [
       "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnZlc3RtZW50JTIwcG9ydGZvbGlvfGVufDF8fHx8MTc3MDQzMzU4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
     categorias: ["Inversiones", "Financiero", "Portafolio"],
     link: "https://www.ejemplo.com/informe9",
-    fecha: "2025-02-03",
+    created_at: "2026-02-24T10:00:00Z",
   },
   {
     id: "10",
@@ -134,7 +135,7 @@ export const noticiasData = [
       "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBlZHVjYXRpb258ZW58MXx8fHwxNzcwNDMzNTg2fDA&ixlib=rb-4.1.0&q=80&w=1080",
     categorias: ["Educación", "Capacitación", "Financiero"],
     link: "https://www.ejemplo.com/informe10",
-    fecha: "2025-01-28",
+    created_at: "2026-02-24T10:00:00Z",
   },
   {
     id: "11",
@@ -147,7 +148,7 @@ export const noticiasData = [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZW5jaG1hcmslMjBidXNpbmVzc3xlbnwxfHx8fDE3NzA0MzM1ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
     categorias: ["Benchmarking", "Comparativo", "Sector"],
     link: "https://www.ejemplo.com/informe11",
-    fecha: "2025-02-07",
+    created_at: "2026-02-24T10:00:00Z",
   },
   {
     id: "12",
@@ -160,6 +161,6 @@ export const noticiasData = [
       "https://images.unsplash.com/photo-1521737711867-e3b97375f902?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxodW1hbiUyMHJlc291cmNlc3xlbnwxfHx8fDE3NzA0MzM1ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
     categorias: ["Talento", "RRHH", "Gestión"],
     link: "https://www.ejemplo.com/informe12",
-    fecha: "2025-02-02",
+    created_at: "2026-02-24T10:00:00Z",
   },
 ];

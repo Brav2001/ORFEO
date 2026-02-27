@@ -1,7 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import NoticiasDetail from "@/components/NoticiasComponents/NoticiasDetail";
+import NoticiasDetail from "@/components/NoticiasComponents/NoticiasDetail.jsx";
 export const prerender = false;
+
+// Astro.params are always strings; we'll send the raw value through
+// so the detail component can compare against the string IDs in the data.
 const { id } = Astro.params;
 ---
 

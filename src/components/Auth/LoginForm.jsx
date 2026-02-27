@@ -12,10 +12,8 @@ const LoginForm = () => {
   const [messageAlert, setMessageAlert] = useState("");
   const [hide, setHide] = useState(true);
 
-  const [captchaId, ChangeCaptchaId] = useStore((state) => [
-    state.captchaId,
-    state.ChangeCaptchaId,
-  ]);
+  const captchaId = useStore((state) => state.captchaId);
+  const ChangeCaptchaId = useStore((state) => state.ChangeCaptchaId);
 
   useEffect(() => {
     validateSession();
@@ -31,43 +29,26 @@ const LoginForm = () => {
     Login(email, password);
   };
 
-  const handleChangeEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const handleChangePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
   const handleHide = () => {
     setHide(true);
   };
 
   useEffect(() => {
-    const recaptchaVerifier = new RecaptchaVerifier(
-      auth,
-      "recaptcha-container",
-
-      // Optional reCAPTCHA parameters.
-      {
-        size: "normal",
-        callback: function (response) {
-          // reCAPTCHA solved, you can proceed with
-          // phoneAuthProvider.verifyPhoneNumber(...).
-          console.log(recaptchaVerifier);
-          ChangeCaptchaId(recaptchaVerifier);
-          setMessageAlert("");
-          setHide(true);
-          onSolvedRecaptcha();
-        },
-        "expired-callback": function () {
-          // Response expired. Ask user to solve reCAPTCHA again.
-          // ...
-          setMessageAlert("Debe volver a validar el reCaptcha");
-          setHide(false);
-          ChangeCaptchaId(null);
-        },
-      }
-    );
+    const recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
+      size: "normal",
+      callback: function () {
+        console.log(recaptchaVerifier);
+        ChangeCaptchaId(recaptchaVerifier);
+        setMessageAlert("");
+        setHide(true);
+        onSolvedRecaptcha();
+      },
+      "expired-callback": function () {
+        setMessageAlert("Debe volver a validar el reCaptcha");
+        setHide(false);
+        ChangeCaptchaId(null);
+      },
+    });
 
     recaptchaVerifier.render().then(function () {
       window.recaptchaWidgetId = "recaptcha-container";
@@ -77,33 +58,32 @@ const LoginForm = () => {
   }, []);
 
   return (
-    <div className=" p-4 bg-white  rounded-lg  sm:p-6 md:p-8 ">
+    <div className="rounded-xl bg-white p-4 sm:p-6">
       <form className="space-y-6" method="post" onSubmit={handleSubmit}>
-        <h5 className="text-xl font-bold text-gray-900 text-center">
-          INGRESA A LA PLATAFORMA
+        <h5 className="text-center text-2xl font-bold text-slate-900">
+          JOSÉ BAYONA CONSULTORÍA
         </h5>
+
         <div>
-          <label
-            htmlFor="email"
-            className="block mb-2 text-sm font-medium text-gray-900 "
-          >
+          <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-900">
             Correo electrónico
           </label>
           <input
             type="email"
             name="email"
             id="email"
-            className=" bg-gray-50 border-2 placeholder-shown:border-gray-300 text-gray-900 text-sm rounded-lg focus:border-primary focus:border-2 focus:outline-none  block w-full p-2.5 focus:invalid:border-red-500 duration-200 "
+            className="block w-full rounded-lg border-2 border-slate-200 bg-slate-50 p-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:invalid:border-red-500"
             placeholder="ejemplo@ejemplo.com"
             value={email}
-            onChange={handleChangeEmail}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
+
         <div>
           <label
             htmlFor="password"
-            className="block mb-2 text-sm font-medium text-gray-900 "
+            className="mb-2 block text-sm font-medium text-slate-900"
           >
             Contraseña
           </label>
@@ -111,20 +91,22 @@ const LoginForm = () => {
             type="password"
             name="password"
             id="password"
-            placeholder="••••••••"
-            className="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:border-primary focus:border-2 focus:outline-none  block w-full p-2.5 focus:invalid:border-red-500 duration-200"
+            placeholder="********"
+            className="block w-full rounded-lg border-2 border-slate-200 bg-slate-50 p-2.5 text-sm text-slate-900 focus:border-primary focus:outline-none focus:invalid:border-red-500"
             value={password}
-            onChange={handleChangePassword}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
-        <div className="w-full flex flex-col justify-center">
+
+        <div className="flex w-full flex-col justify-center gap-2">
           <div id="recaptcha-container"></div>
           <Alert hide={hide} message={messageAlert} handleHide={handleHide} />
         </div>
+
         <button
           type="submit"
-          className="w-full bg-white border border-primary border-2 font-bold rounded-lg px-5 py-2.5 mr-2 mb-2  hover:bg-primary hover:text-white duration-200"
+          className="w-full rounded-lg border-2 border-primary bg-white px-5 py-2.5 font-bold text-slate-900 transition-colors duration-200 hover:bg-primary hover:text-white"
         >
           Iniciar sesión
         </button>
